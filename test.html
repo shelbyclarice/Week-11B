@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 11: Final Project - Character Test Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+    <meta name="viewport" content="width=device-width" />
+    <!--Shelby Cochrane-->
+    <!--Website that has the content of learning about Spongebob Squarepants. There will be a 5 question multiple choice quiz where once you submit, it tells you your score and a character test where you can type in as much of the main character's names as you can. You submit a name and the computer will tell you if you are correct or not. There is also a button to show the correct answers. On the menu tab, when you click will appear a drop-down menu, are the quiz, the character test, and the link that leads to the portfolio. The link to the portfolio is not there yet.-->
+  </head>
+
+  <body style="background-image: url(images/back.jpg)">
+    <div class="container">
+      <header>
+        <div id="branding">
+          <!--Heading-->
+          <h1>Welcome to the Spongebob Squarepants Page</h1>
+        </div>
+      </header>
+
+      <!--Row consists of two columns-->
+      <div id="row">
+        <!--Left Column-->
+        <div id="col1">
+          <!--Drop down menu-->
+          <div class="menu">
+            <button onclick="toggleMenu()">Menu</button>
+            <nav id="nav">
+              <div class="panel">
+                <a href="index.html">Fact Quiz</a>
+                <a href="test.html">Character Test</a>
+                <a href="#">Portfolio</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <script>
+          // This function toggles the visibility of the navigation menu
+          function toggleMenu() {
+            var nav = document.getElementById("nav");
+            if (nav.style.display === "block") {
+              nav.style.display = "none";
+            } else {
+              nav.style.display = "block";
+            }
+          }
+
+          // Get all elements with class "accordion"
+          var acc = document.getElementsByClassName("accordion");
+
+          // Loop through all elements with class "accordion"
+          for (var i = 0; i < acc.length; i++) {
+            // Add a click event listener to the current element
+            acc[i].addEventListener("click", function () {
+              // Toggle the "active" class on the current element
+              this.classList.toggle("active");
+
+              // Get the next sibling element of the current element
+              var panel = this.nextElementSibling;
+
+              // If the maximum height of the panel is already set, set it to null to hide the content
+              if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+              } else {
+                // Otherwise, set the maximum height of the panel to its scroll height to show the content
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+            });
+          }
+        </script>
+
+        <!--2nd Column - The Character Test-->
+        <div id="col2">
+          <!--Subheading-->
+          <h2>Can you Guess all of the Main Characters of the Show?</h2>
+          <p>
+            There are a Total of 10 Main Characters in Spongebob Squarepants.
+          </p>
+
+          <!--Form to input a number and check if it's available.-->
+          <form>
+            <h4>
+              <label for="newCharacterInput">Enter a Character Name:</label>
+            </h4>
+            <input
+              type="text"
+              id="newCharacterInput"
+              name="newCharacterInput"
+            />
+
+            <br />
+
+            <!--Click the button to check your answer-->
+            <button type="button" onclick="checkCharacter()">Submit</button>
+          </form>
+
+          <!--Displays the correct answers-->
+          <ul id="list"></ul>
+          <button onclick="displayList()">Show Correct Answers</button>
+        </div>
+
+        <script>
+          // Setting up an array of numbers and strings
+          var characterNames = [
+            "spongebob",
+            "patrick",
+            "sandy",
+            "squidward",
+            "mr. krabs",
+            "plankton",
+            "gary",
+            "pearl",
+            "karen",
+            "mrs. puff",
+          ];
+
+          // function to display the array as a list
+          function displayList() {
+            var list = document.getElementById("list");
+            list.innerHTML = ""; // clear the existing list
+
+            for (var i = 0; i < characterNames.length; i++) {
+              var item = document.createElement("li");
+              item.appendChild(document.createTextNode(characterNames[i]));
+              list.appendChild(item);
+            }
+          }
+
+          // check if the entered name is valid and not a duplicate
+          function checkCharacter() {
+            var newCharacterInput =
+              document.getElementById("newCharacterInput");
+            var newCharacter = newCharacterInput.value.trim().toLowerCase();
+
+            // check if the input is not empty
+            if (newCharacter && newCharacter !== "") {
+              // check if the character is in the array
+              if (characterNames.includes(newCharacter)) {
+                alert(
+                  "Great Job! You chose a number. Keep on typing other numbers! You typed in " +
+                    newCharacter
+                );
+                // check if the character has already been entered
+                if (!document.getElementById(`list-${newCharacter}`)) {
+                  // add the new character to the list
+                  var item = document.createElement("li");
+                  item.id = `list-${newCharacter}`;
+                  item.appendChild(document.createTextNode(newCharacter));
+                  document.getElementById("list").appendChild(item);
+                }
+              } else {
+                alert(
+                  "Sorry, try again! This was not one of the selected characters. You typed in " +
+                    newCharacter
+                );
+              }
+
+              // clear the input field
+              newCharacterInput.value = "";
+            } else {
+              alert("Please enter a valid response.");
+            }
+          }
+        </script>
+      </div>
+
+      <!--Footer-->
+      <footer>
+        <p>Shelby Cochrane, Copyright &copy; 2023</p>
+      </footer>
+    </div>
+  </body>
+</html>

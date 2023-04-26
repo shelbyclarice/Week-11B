@@ -1,0 +1,491 @@
+body {
+  font: 15px/1.5 helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Global */
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #003b84;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+}
+
+header #branding {
+  text-align: center;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+/* Media Queries Desktop */
+@media (min-width: 801px) {
+  /* Layout, 1 row and 2 columns */
+  #row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 2000px;
+    height: 1300px;
+    flex-wrap: nowrap;
+    float: left;
+    margin-left: 100px;
+  }
+
+  /* Buttons for Menu and Submission */
+  button {
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #003b84;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 70px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #ffffff;
+    color: #003b84;
+    border-color: #003b84;
+    border-width: 2px;
+  }
+
+  /* Column 1 - left side */
+  #col1 {
+    width: 20%;
+    height: 200px;
+    margin-right: 25px;
+    margin-top: 40px;
+    flex: 1;
+  }
+
+  /* Menu Button */
+  .menu {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3 Subtabs */
+  #nav {
+    display: none;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+  }
+
+  /* Subtab button and hover */
+  .panel a {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: navy;
+    text-decoration: none;
+  }
+
+  .panel a:hover {
+    background-color: rgb(108, 108, 108);
+    color: white;
+  }
+
+  /* Column 2 - Right side */
+  #col2 {
+    height: 1100px;
+    border-radius: 15px;
+    margin: 30px;
+    width: 80%;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  label {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* quiz */
+  #quiz-form {
+    margin-top: 30px;
+  }
+
+  /* 5 Questions on Quiz */
+  form ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Per Question */
+  form ol li {
+    margin-bottom: 20px;
+  }
+
+  /* H3 for Questions */
+  form h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  /* Div for Input and Label */
+  form ol li div {
+    margin-left: 20px;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Answer Choices */
+  form label {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #003b84;
+  color: white;
+  text-align: center;
+}
+
+/* Media Queries Small Desktop*/
+@media (max-width: 1200px) {
+  /* Layout, 1 row and 2 columns */
+  #row {
+    margin-left: 40px;
+  }
+}
+
+/* Media Queries Smaller Screen*/
+@media (max-width: 1000px) {
+  /* Layout, 1 row and 2 columns */
+  #row {
+    margin-left: 20px;
+  }
+}
+
+/* Media Queries Landscape*/
+@media (max-width: 800px) {
+  /* Buttons for Menu and Submission */
+  #row {
+    margin-left: 0px;
+  }
+  button {
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #003b84;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #ffffff;
+    color: #003b84;
+    border-color: #003b84;
+    border-width: 2px;
+  }
+
+  /* Column 1 - left side */
+  #col1 {
+    width: 20%;
+    height: 180px;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  /* Menu Button */
+  .menu {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3 Subtabs */
+  #nav {
+    display: none;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+  }
+
+  /* Subtab button and hover */
+  .panel a {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: navy;
+    text-decoration: none;
+  }
+
+  .panel a:hover {
+    background-color: rgb(108, 108, 108);
+    color: white;
+  }
+
+  /* Column 2 - Right side */
+  #col2 {
+    height: 1100px;
+    border-radius: 15px;
+    margin: 30px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  label {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  /* quiz */
+  #quiz-form {
+    margin-top: 30px;
+  }
+
+  /* 5 Questions on Quiz */
+  form ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Per Question */
+  form ol li {
+    margin-bottom: 20px;
+  }
+
+  /* H3 for Questions */
+  form h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  /* Div for Input and Label */
+  form ol li div {
+    margin-left: 20px;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Answer Choices */
+  form label {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/* Media Queries Portriat*/
+@media (max-width: 600px) {
+  /* Buttons for Menu and Submission */
+  #row {
+    margin-left: 0px;
+  }
+
+  button {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #003b84;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #ffffff;
+    color: #003b84;
+    border-color: #003b84;
+    border-width: 2px;
+  }
+
+  /* Column 1 - left side */
+  #col1 {
+    height: 180px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  label {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+  }
+
+  /* Menu Button */
+  .menu {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3 Subtabs */
+  #nav {
+    display: none;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+  }
+
+  /* Subtab button and hover */
+  .panel a {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: navy;
+    text-decoration: none;
+  }
+
+  .panel a:hover {
+    background-color: rgb(108, 108, 108);
+    color: white;
+  }
+
+  /* Column 2 - Right side */
+  #col2 {
+    height: 1100px;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* quiz */
+  #quiz-form {
+    margin-top: 30px;
+  }
+
+  /* 5 Questions on Quiz */
+  form ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Per Question */
+  form ol li {
+    margin-bottom: 20px;
+  }
+
+  /* H3 for Questions */
+  form h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+
+  /* Div for Input and Label */
+  form ol li div {
+    margin-left: 40px;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Answer Choices */
+  form label {
+    font-size: 12px;
+    font-weight: 300;
+    display: block;
+  }
+
+  /* Shows the quiz results once submitted */
+  #score {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

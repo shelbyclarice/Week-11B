@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 11: Final Project: Spongebob Squarepants</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <!--Shelby Cochrane-->
+    <!--Website that has the content of learning about Spongebob Squarepants. There will be a 5 question multiple choice quiz where once you submit, it tells you your score and a character test where you can type in as much of the main character's names as you can. You submit a name and the computer will tell you if you are correct or not. There is also a button to show the correct answers. On the menu tab, when you click will appear a drop-down menu, are the quiz, the character test, and the link that leads to the portfolio. The link to the portfolio is not there yet.-->
+  </head>
+
+  <body style="background-image: url(images/back.jpg)">
+    <div class="container">
+      <header>
+        <!--Heading-->
+        <div id="branding">
+          <h1>Welcome to the Spongebob Squarepants Page</h1>
+        </div>
+      </header>
+
+      <!--Row consists of two columns-->
+      <div id="row">
+        <!--Left Column-->
+        <div id="col1">
+          <!--Drop down menu-->
+          <div class="menu">
+            <button onclick="toggleMenu()">Menu</button>
+            <nav id="nav">
+              <div class="panel">
+                <a href="index.html">Fact Quiz</a>
+                <a href="test.html">Character Test</a>
+                <a href="#">Portfolio</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <script>
+          // This function toggles the visibility of the navigation menu
+          function toggleMenu() {
+            var nav = document.getElementById("nav");
+            if (nav.style.display === "block") {
+              nav.style.display = "none";
+            } else {
+              nav.style.display = "block";
+            }
+          }
+
+          // Get all elements with class "accordion"
+          var acc = document.getElementsByClassName("accordion");
+
+          // Loop through all elements with class "accordion"
+          for (var i = 0; i < acc.length; i++) {
+            // Add a click event listener to the current element
+            acc[i].addEventListener("click", function () {
+              // Toggle the "active" class on the current element
+              this.classList.toggle("active");
+
+              // Get the next sibling element of the current element
+              var panel = this.nextElementSibling;
+
+              // If the maximum height of the panel is already set, set it to null to hide the content
+              if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+              } else {
+                // Otherwise, set the maximum height of the panel to its scroll height to show the content
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+            });
+          }
+        </script>
+
+        <div id="col2">
+          <!--Subheading-->
+          <h2>
+            Test your knowledge of Spongebob Facts. When your done, click
+            Submit.
+          </h2>
+          <!--Quiz in a form-->
+          <div id="quiz-form">
+            <form
+              name="questions"
+              onsubmit="return responsesFromForm();"
+              method="post"
+            >
+              <!--The 5 questions-->
+              <ol>
+                <li>
+                  <h3>1. What is Spongebob's Favorite Color?</h3>
+                  <div>
+                    <input type="radio" name="question1" value="a" id="q1a" />
+                    <label for="q1a">a) Maroon</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question1" value="b" id="q1b" />
+                    <label for="q1b">b) Beige</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question1" value="c" id="q1c" />
+                    <label for="q1c">c) Teal</label>
+                  </div>
+                </li>
+                <li>
+                  <h3>2. How Many Holes does Spongebob Have?</h3>
+                  <div>
+                    <input type="radio" name="question2" value="a" id="q2a" />
+                    <label for="q2a">a) 27</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question2" value="b" id="q2b" />
+                    <label for="q2b">b) 16</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question2" value="c" id="q2c" />
+                    <label for="q2c">c) 22</label>
+                  </div>
+                </li>
+                <li>
+                  <h3>3. Who is Spongebob's Cousin?</h3>
+                  <div>
+                    <input type="radio" name="question3" value="a" id="q3a" />
+                    <label for="q3a">a) Stanley</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question3" value="b" id="q3b" />
+                    <label for="q3b">b) Rick</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question3" value="c" id="q3c" />
+                    <label for="q3c">c) Andrew</label>
+                  </div>
+                </li>
+                <li>
+                  <h3>4. What is Spongebob's Favorite Icecream Flavor?</h3>
+                  <div>
+                    <input type="radio" name="question4" value="a" id="q4a" />
+                    <label for="q4a">a) Chocolate</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question4" value="b" id="q4b" />
+                    <label for="q4b">b) Vanilla</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question4" value="c" id="q4c" />
+                    <label for="q4c">c) Pistachio</label>
+                  </div>
+                </li>
+                <li>
+                  <h3>5. Who are Spongebob's Parents?</h3>
+                  <div>
+                    <input type="radio" name="question5" value="a" id="q5a" />
+                    <label for="q5a">a) Hector & Maggie Squarepants</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question5" value="b" id="q5b" />
+                    <label for="q5b">b) Harold & Marguet Squarepants</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="question5" value="c" id="q5c" />
+                    <label for="q5c">c) Harry & Mary Squarepants</label>
+                  </div>
+                </li>
+              </ol>
+
+              <!--Button to Submit the quiz and will tell you your score-->
+              <button type="submit">Submit Quiz</button>
+            </form>
+            <div id="score"></div>
+          </div>
+        </div>
+
+        <!--Javascript taking the quiz-->
+        <script>
+          // Define the correct answers for each question
+          const correctAnswers = ["B", "A", "A", "B", "B"];
+
+          // Get the form element
+          const quizForm = document.querySelector("#quiz-form");
+
+          // Get the result element
+          const resultContainer = document.querySelector("#result");
+
+          // Add a submit event listener to the form
+          quizForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let score = 0;
+            const userAnswers = [
+              quizForm.question1.value.toUpperCase(),
+              quizForm.question2.value.toUpperCase(),
+              quizForm.question3.value.toUpperCase(),
+              quizForm.question4.value.toUpperCase(),
+              quizForm.question5.value.toUpperCase(),
+            ];
+
+            // Check the answers and increment the score for correct answers
+            userAnswers.forEach((answer, index) => {
+              if (answer === correctAnswers[index]) {
+                score += 20;
+              }
+            });
+
+            // Display the score
+            resultContainer.innerHTML = `You scored ${score}% on the quiz.`;
+          });
+
+          function calculateScore() {
+            var numCorrect = 0;
+
+            // Check each question
+            if (document.questions.question1.value == "b") {
+              numCorrect++;
+            }
+            if (document.questions.question2.value == "a") {
+              numCorrect++;
+            }
+            if (document.questions.question3.value == "a") {
+              numCorrect++;
+            }
+            if (document.questions.question4.value == "b") {
+              numCorrect++;
+            }
+            if (document.questions.question5.value == "b") {
+              numCorrect++;
+            }
+
+            // Display the score
+            var scoreDiv = document.getElementById("score");
+            scoreDiv.innerHTML =
+              "You got " + numCorrect + " out of 5 questions correct!";
+          }
+
+          function responsesFromForm() {
+            // Get the user's responses
+            // ...
+
+            // Calculate the score
+            calculateScore();
+
+            // Prevent the form from submitting
+            return false;
+          }
+        </script>
+      </div>
+
+      <!--Footer-->
+      <footer>
+        <p>Shelby Cochrane, Copyright &copy; 2023</p>
+      </footer>
+    </div>
+  </body>
+</html>
